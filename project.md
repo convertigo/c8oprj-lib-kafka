@@ -1,7 +1,7 @@
 
 # ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/core/images/project_color_16x16.png?raw=true "Project") lib_Kafka
 
-# This is a the Kafaka connector for Convertigo.
+# This is the Kafaka connector for Convertigo.
 
 The connector will allow Convertigo applications to produce Kafka messages on topics
 
