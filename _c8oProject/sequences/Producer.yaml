@@ -67,6 +67,8 @@ comment: Produce a record with a key and a message on a topic. Will return the p
   comment: the topic where the message as to be produced
 ↓message [variables.RequestableVariable-1711551033554]: 
   comment: The message data to be produced , this can be a JSON string
+↓key [variables.RequestableVariable-1711711289068]: 
+  comment: The message key to be used
 ↓TestOK [core.TestCase]: 
   ↓topic [variables.TestCaseVariable-1711551049653]: 
     value: customers

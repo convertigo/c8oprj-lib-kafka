@@ -62,6 +62,9 @@ Produce a record with a key and a message on a topic. Will return the produced o
 <th>name</th><th>comment</th>
 </tr>
 <tr>
+<td>key</td><td>The message key to be used</td>
+</tr>
+<tr>
 <td>message</td><td>The message data to be produced , this can be a JSON string</td>
 </tr>
 <tr>
