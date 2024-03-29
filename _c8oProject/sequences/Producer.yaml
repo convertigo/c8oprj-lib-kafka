@@ -1,0 +1,76 @@
+accessibility: Hidden
+comment: Produce a record with a key and a message on a topic. Will return the produced offset and the partition
+↓SendMessage [steps.SimpleStep-1711541118316]: 
+  expression: |
+    ' var KafkaClient = JavaImporter(
+    	java.util.Properties,
+    	org.apache.kafka.clients.producer.KafkaProducer,
+    	org.apache.kafka.clients.producer.Producer,
+    	org.apache.kafka.clients.producer.ProducerConfig,
+    	org.apache.kafka.clients.producer.ProducerRecord,
+    	org.apache.kafka.common.serialization.StringSerializer,
+    	org.slf4j.Logger,
+    	org.slf4j.LoggerFactory,
+    	
+    	com.convertigo.kafka
+    );
+    
+    
+    with (KafkaClient) {
+    	var produced = {
+    	}
+    	
+    	props = new Properties();
+    	props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "${lib_Kafka.server_port=localhost:19092}");
+    
+    
+    	let myStringSerializer = StringSerializer.__javaObject__
+    	
+    	props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, myStringSerializer);
+    	props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, myStringSerializer);
+    	
+    	producerCallback = new JavaAdapter(org.apache.kafka.clients.producer.Callback, {
+    		onCompletion: function(metadata, exception) {
+    			if (exception != null) {
+    				log.error("Error producing" + exception)
+    			} else {
+    				log.warn("Produced record offset:" + metadata.offset() + " topic:" + metadata.topic() )
+    				produced.topic = metadata.topic();
+    				produced.offset = metadata.offset();
+    				produced.partition = metadata.partition();
+    			}
+    		}
+    	})
+    		
+    	producer = new KafkaProducer(props)
+    	producer.send(new ProducerRecord(topic +'''',	key + '''', message + ''''), producerCallback);
+    	producer.flush();
+    	producer.close();
+    	log.warn("produced : " + JSON.stringify(produced))
+    }
+    
+    '
+↓object [steps.JsonToXmlStep-1711710350667]: 
+  jsonObject: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+      - SmartType: 
+        - ↑mode: JS
+        - →→: produced
+  key: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+      - SmartType: 
+        - ↑mode: PLAIN
+        - →→: produced
+↓topic [variables.RequestableVariable-1711551025901]: 
+  comment: the topic where the message as to be produced
+↓message [variables.RequestableVariable-1711551033554]: 
+  comment: The message data to be produced , this can be a JSON string
+↓TestOK [core.TestCase]: 
+  ↓topic [variables.TestCaseVariable-1711551049653]: 
+    value: customers
+  ↓key [variables.TestCaseVariable-1711710110387]: 
+    value: key1
+  ↓message [variables.TestCaseVariable-1711551049655]: 
+    value: This is a test message For Me

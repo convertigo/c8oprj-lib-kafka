@@ -1,5 +1,17 @@
 ↑convertigo: 8.0.0.m006
 ↓lib_Kafka [core.Project]: 
-  comment: Mashup Sequencer project
+  comment: |
+    '# This is a the Kafaka connector for Convertigo.
+    
+    The connector will allow Convertigo applications to produce Kafka messages on topics
+    
+    ## Symbols
+    
+    | Name                  | Default Value |  Usage                                 |
+    |-----------------------|---------------|----------------------------------------|
+    |lib_Kafka.server_port  |localhost:19092|The host and port of the kafka broker   |
+    |-----------------------|---------------|----------------------------------------|
+    
+    '
   ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml
-  ↓NewSequence [sequences.GenericSequence]: 🗏 sequences/NewSequence.yaml
+  ↓Producer [sequences.GenericSequence]: 🗏 sequences/Producer.yaml
