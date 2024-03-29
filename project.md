@@ -11,7 +11,7 @@ The connector will allow Convertigo applications to produce Kafka messages on to
 |-----------------------|---------------|----------------------------------------|
 |lib_Kafka.server_port  |localhost:19092|The host and port of the kafka broker   |
 
-## testing
+## Testing
 
 You can use conductor Kafka package (https://www.conduktor.io/kafka/) to test. Docker container setup is easy : 
 
@@ -20,7 +20,7 @@ curl -L https://releases.conduktor.io/quick-start -o docker-compose.yml && docke
 ```
 
 Will run a Full Stack Kafka + Conductor admin console on localhost:19092
-
+<hr />
 
 
 <details><summary><span style="color:DarkGoldenRod"><i>Connectors</i></span></summary><blockquote><p>

@@ -11,7 +11,7 @@
     |-----------------------|---------------|----------------------------------------|
     |lib_Kafka.server_port  |localhost:19092|The host and port of the kafka broker   |
     
-    ## testing
+    ## Testing
     
     You can use conductor Kafka package (https://www.conduktor.io/kafka/) to test. Docker container setup is easy : 
     
@@ -20,7 +20,7 @@
     ```
     
     Will run a Full Stack Kafka + Conductor admin console on localhost:19092
-    
+    <hr />
     '
   ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml
   ↓Producer [sequences.GenericSequence]: 🗏 sequences/Producer.yaml
