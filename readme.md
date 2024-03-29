@@ -12,7 +12,6 @@ The connector will allow Convertigo applications to produce Kafka messages on to
 | Name                  | Default Value |  Usage                                 |
 |-----------------------|---------------|----------------------------------------|
 |lib_Kafka.server_port  |localhost:19092|The host and port of the kafka broker   |
-|-----------------------|---------------|----------------------------------------|
 
 
 
@@ -37,13 +36,13 @@ For more technical informations : [documentation](./project.md)
      <tr><td>To contribute</td><td>
 
      ```
-     lib_Kafka=/Users/olivierpicciotto/wrks/lib_Kafka/.git:branch=master
+     lib_Kafka=https://github.com/convertigo/c8oprj-lib-kafka.git:branch=master
      ```
      </td></tr>
      <tr><td>To simply use</td><td>
 
      ```
-     lib_Kafka=/Users/olivierpicciotto/wrks/lib_Kafka//archive/master.zip
+     lib_Kafka=https://github.com/convertigo/c8oprj-lib-kafka/archive/master.zip
      ```
      </td></tr>
     </table>

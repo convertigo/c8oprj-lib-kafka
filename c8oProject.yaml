@@ -10,7 +10,6 @@
     | Name                  | Default Value |  Usage                                 |
     |-----------------------|---------------|----------------------------------------|
     |lib_Kafka.server_port  |localhost:19092|The host and port of the kafka broker   |
-    |-----------------------|---------------|----------------------------------------|
     
     '
   ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml

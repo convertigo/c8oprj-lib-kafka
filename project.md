@@ -10,7 +10,6 @@ The connector will allow Convertigo applications to produce Kafka messages on to
 | Name                  | Default Value |  Usage                                 |
 |-----------------------|---------------|----------------------------------------|
 |lib_Kafka.server_port  |localhost:19092|The host and port of the kafka broker   |
-|-----------------------|---------------|----------------------------------------|
 
 
 
